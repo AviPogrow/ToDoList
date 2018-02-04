@@ -47,6 +47,16 @@
 		FA42AB4F2027758700B04F38 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA42AB532027758700B04F38 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		FA42AB552027758700B04F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA42AB61202795B800B04F38 /* Appointments.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Appointments.psd; sourceTree = "<group>"; };
+		FA42AB62202795B800B04F38 /* Inbox.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inbox.psd; sourceTree = "<group>"; };
+		FA42AB63202795B800B04F38 /* Birthdays.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Birthdays.psd; sourceTree = "<group>"; };
+		FA42AB64202795B800B04F38 /* Chores.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chores.psd; sourceTree = "<group>"; };
+		FA42AB65202795B800B04F38 /* Trips.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trips.psd; sourceTree = "<group>"; };
+		FA42AB66202795B800B04F38 /* Groceries.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Groceries.psd; sourceTree = "<group>"; };
+		FA42AB67202795B800B04F38 /* Icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Icon.psd; path = "../../iOSBooks/iOS_Apprentice_All_Books_v5-2/The iOS Apprentice 2 - Checklists 3/Resources/Photoshop/Icon.psd"; sourceTree = "<group>"; };
+		FA42AB68202795B800B04F38 /* Folder.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Folder.psd; sourceTree = "<group>"; };
+		FA42AB69202795B900B04F38 /* Photos.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Photos.psd; sourceTree = "<group>"; };
+		FA42AB6A202795B900B04F38 /* Drinks.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drinks.psd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,16 @@
 				FA42AB352027758600B04F38 /* AllListsViewController.swift */,
 				FA42AB372027758600B04F38 /* Main.storyboard */,
 				FA42AB3A2027758600B04F38 /* Assets.xcassets */,
+				FA42AB61202795B800B04F38 /* Appointments.psd */,
+				FA42AB63202795B800B04F38 /* Birthdays.psd */,
+				FA42AB64202795B800B04F38 /* Chores.psd */,
+				FA42AB6A202795B900B04F38 /* Drinks.psd */,
+				FA42AB68202795B800B04F38 /* Folder.psd */,
+				FA42AB66202795B800B04F38 /* Groceries.psd */,
+				FA42AB67202795B800B04F38 /* Icon.psd */,
+				FA42AB62202795B800B04F38 /* Inbox.psd */,
+				FA42AB69202795B900B04F38 /* Photos.psd */,
+				FA42AB65202795B800B04F38 /* Trips.psd */,
 				FA42AB3C2027758600B04F38 /* LaunchScreen.storyboard */,
 				FA42AB3F2027758600B04F38 /* Info.plist */,
 			);

@@ -18,6 +18,14 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddChecklist" {
+          let navigationController = segue.destination as! UINavigationController
+          let controller = navigationController.topViewController as! AddOrEditChecklistViewController
+          controller.delegate = self
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

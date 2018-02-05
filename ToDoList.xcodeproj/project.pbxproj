@@ -112,21 +112,12 @@
 		FA42AB322027758600B04F38 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				FAD0A59D2028A52B007D9E1A /* StoryBoard */,
+				FAD0A59C2028A503007D9E1A /* ImageAssets */,
 				FAEA0E4720287F8900AF6E76 /* Model */,
 				FAEA0E4620287F5F00AF6E76 /* ViewControllers */,
 				FA42AB332027758600B04F38 /* AppDelegate.swift */,
-				FA42AB372027758600B04F38 /* Main.storyboard */,
 				FA42AB3A2027758600B04F38 /* Assets.xcassets */,
-				FA42AB61202795B800B04F38 /* Appointments.psd */,
-				FA42AB63202795B800B04F38 /* Birthdays.psd */,
-				FA42AB64202795B800B04F38 /* Chores.psd */,
-				FA42AB6A202795B900B04F38 /* Drinks.psd */,
-				FA42AB68202795B800B04F38 /* Folder.psd */,
-				FA42AB66202795B800B04F38 /* Groceries.psd */,
-				FA42AB62202795B800B04F38 /* Inbox.psd */,
-				FA42AB69202795B900B04F38 /* Photos.psd */,
-				FA42AB65202795B800B04F38 /* Trips.psd */,
-				FA42AB3C2027758600B04F38 /* LaunchScreen.storyboard */,
 				FA42AB3F2027758600B04F38 /* Info.plist */,
 			);
 			path = ToDoList;
@@ -148,6 +139,31 @@
 				FA42AB552027758700B04F38 /* Info.plist */,
 			);
 			path = ToDoListUITests;
+			sourceTree = "<group>";
+		};
+		FAD0A59C2028A503007D9E1A /* ImageAssets */ = {
+			isa = PBXGroup;
+			children = (
+				FA42AB61202795B800B04F38 /* Appointments.psd */,
+				FA42AB63202795B800B04F38 /* Birthdays.psd */,
+				FA42AB64202795B800B04F38 /* Chores.psd */,
+				FA42AB6A202795B900B04F38 /* Drinks.psd */,
+				FA42AB68202795B800B04F38 /* Folder.psd */,
+				FA42AB66202795B800B04F38 /* Groceries.psd */,
+				FA42AB62202795B800B04F38 /* Inbox.psd */,
+				FA42AB69202795B900B04F38 /* Photos.psd */,
+				FA42AB65202795B800B04F38 /* Trips.psd */,
+			);
+			path = ImageAssets;
+			sourceTree = "<group>";
+		};
+		FAD0A59D2028A52B007D9E1A /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				FA42AB3C2027758600B04F38 /* LaunchScreen.storyboard */,
+				FA42AB372027758600B04F38 /* Main.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		FAEA0E4620287F5F00AF6E76 /* ViewControllers */ = {

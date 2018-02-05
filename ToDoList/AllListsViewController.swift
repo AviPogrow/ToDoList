@@ -48,9 +48,19 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     }
     
     func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController, didFinishEditing checklist: Checklist) {
-        
+     //a. take the checklist object passed into the function and find its index in the array
+     if let index = lists.index(of: checklist) {
+      //b. create an indexPath to tell the tableView where to put the row
+      let indexPath = IndexPath(row: index, section: 0)
+      //c. get the cell associated with the row at the indexPath
+        if let cell = tableView.cellForRow(at: indexPath) {
+         //d. get the name property of the current checklist and use it to set
+         // the textLabel on the tableViewCell
+          cell.textLabel?.text = checklist.name
+        }
     }
-    
+    dismiss(animated: true, completion: nil)
+   }
 
 
 }

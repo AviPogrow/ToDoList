@@ -112,8 +112,9 @@
 		FA42AB322027758600B04F38 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				FAEA0E4720287F8900AF6E76 /* Model */,
+				FAEA0E4620287F5F00AF6E76 /* ViewControllers */,
 				FA42AB332027758600B04F38 /* AppDelegate.swift */,
-				FA42AB352027758600B04F38 /* AllListsViewController.swift */,
 				FA42AB372027758600B04F38 /* Main.storyboard */,
 				FA42AB3A2027758600B04F38 /* Assets.xcassets */,
 				FA42AB61202795B800B04F38 /* Appointments.psd */,
@@ -127,9 +128,6 @@
 				FA42AB65202795B800B04F38 /* Trips.psd */,
 				FA42AB3C2027758600B04F38 /* LaunchScreen.storyboard */,
 				FA42AB3F2027758600B04F38 /* Info.plist */,
-				FA42AB6B20279B4800B04F38 /* Checklist.swift */,
-				FA42AB6D20279BC900B04F38 /* ChecklistItem.swift */,
-				FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -150,6 +148,24 @@
 				FA42AB552027758700B04F38 /* Info.plist */,
 			);
 			path = ToDoListUITests;
+			sourceTree = "<group>";
+		};
+		FAEA0E4620287F5F00AF6E76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA42AB352027758600B04F38 /* AllListsViewController.swift */,
+				FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FAEA0E4720287F8900AF6E76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA42AB6D20279BC900B04F38 /* ChecklistItem.swift */,
+				FA42AB6B20279B4800B04F38 /* Checklist.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,7 +479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.avi.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -478,7 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.avi.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

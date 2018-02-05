@@ -24,11 +24,46 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
         // Dispose of any resources that can be recreated.
     }
     
+    //  MARK: - TableView Data Source Methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return lists.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                          cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+      let cell = makeCell(for: tableView)
+
+      let checklist = lists[indexPath.row]
+      cell.textLabel!.text = checklist.name
+      cell.accessoryType = .detailDisclosureButton
+    
+      return cell
+    }
+    
+    //helper method that checks if there is a cell to reuse and if not
+    //creates a new one
+    func makeCell(for tableView: UITableView) -> UITableViewCell {
+     let cellIdentifier = "Cell"
+     if let cell =
+      tableView.dequeueReusableCell(withIdentifier: cellIdentifier) {
+      return cell
+    } else {
+      return UITableViewCell(style: .default,
+                             reuseIdentifier: cellIdentifier)
+    }
+  }
+    
+    
+    //  MARK: - TableView Delegate Methods
+    
     //3 delegate methods that respond to messages sent from the AddOrEditChecklistVC
+    //delegate method #1
     func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController) {
         dismiss(animated: true, completion: nil)
     }
     
+    //delegate method #2
     func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController, didFinishAdding checklist: Checklist) {
         
         //a. create an index:Int to point to the new row in the TableView
@@ -47,6 +82,7 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
         
     }
     
+    //delegate method #3
     func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController, didFinishEditing checklist: Checklist) {
      //a. take the checklist object passed into the function and find its index in the array
      if let index = lists.index(of: checklist) {
@@ -58,10 +94,9 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
          // the textLabel on the tableViewCell
           cell.textLabel?.text = checklist.name
         }
+     }
+     dismiss(animated: true, completion: nil)
     }
-    dismiss(animated: true, completion: nil)
-   }
-
 
 }
 

@@ -14,6 +14,9 @@
 		FA42AB3E2027758600B04F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA42AB3C2027758600B04F38 /* LaunchScreen.storyboard */; };
 		FA42AB492027758600B04F38 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42AB482027758600B04F38 /* ToDoListTests.swift */; };
 		FA42AB542027758700B04F38 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42AB532027758700B04F38 /* ToDoListUITests.swift */; };
+		FA42AB6C20279B4800B04F38 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42AB6B20279B4800B04F38 /* Checklist.swift */; };
+		FA42AB6E20279BC900B04F38 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42AB6D20279BC900B04F38 /* ChecklistItem.swift */; };
+		FAEA0E452028713200AF6E76 /* AddOrEditChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +56,12 @@
 		FA42AB64202795B800B04F38 /* Chores.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chores.psd; sourceTree = "<group>"; };
 		FA42AB65202795B800B04F38 /* Trips.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trips.psd; sourceTree = "<group>"; };
 		FA42AB66202795B800B04F38 /* Groceries.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Groceries.psd; sourceTree = "<group>"; };
-		FA42AB67202795B800B04F38 /* Icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Icon.psd; path = "../../iOSBooks/iOS_Apprentice_All_Books_v5-2/The iOS Apprentice 2 - Checklists 3/Resources/Photoshop/Icon.psd"; sourceTree = "<group>"; };
 		FA42AB68202795B800B04F38 /* Folder.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Folder.psd; sourceTree = "<group>"; };
 		FA42AB69202795B900B04F38 /* Photos.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Photos.psd; sourceTree = "<group>"; };
 		FA42AB6A202795B900B04F38 /* Drinks.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drinks.psd; sourceTree = "<group>"; };
+		FA42AB6B20279B4800B04F38 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		FA42AB6D20279BC900B04F38 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditChecklistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +122,14 @@
 				FA42AB6A202795B900B04F38 /* Drinks.psd */,
 				FA42AB68202795B800B04F38 /* Folder.psd */,
 				FA42AB66202795B800B04F38 /* Groceries.psd */,
-				FA42AB67202795B800B04F38 /* Icon.psd */,
 				FA42AB62202795B800B04F38 /* Inbox.psd */,
 				FA42AB69202795B900B04F38 /* Photos.psd */,
 				FA42AB65202795B800B04F38 /* Trips.psd */,
 				FA42AB3C2027758600B04F38 /* LaunchScreen.storyboard */,
 				FA42AB3F2027758600B04F38 /* Info.plist */,
+				FA42AB6B20279B4800B04F38 /* Checklist.swift */,
+				FA42AB6D20279BC900B04F38 /* ChecklistItem.swift */,
+				FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -279,8 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEA0E452028713200AF6E76 /* AddOrEditChecklistViewController.swift in Sources */,
 				FA42AB362027758600B04F38 /* AllListsViewController.swift in Sources */,
 				FA42AB342027758600B04F38 /* AppDelegate.swift in Sources */,
+				FA42AB6C20279B4800B04F38 /* Checklist.swift in Sources */,
+				FA42AB6E20279BC900B04F38 /* ChecklistItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

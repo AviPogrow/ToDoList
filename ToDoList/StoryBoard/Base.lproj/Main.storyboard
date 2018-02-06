@@ -116,8 +116,11 @@
                                                     <rect key="frame" x="16" y="6" width="343" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Apz-UC-qWJ" id="Te0-vt-XCY"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -244,7 +247,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibt-ce-u4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="868"/>
+            <point key="canvasLocation" x="388" y="787"/>
         </scene>
     </scenes>
 </document>

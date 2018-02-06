@@ -20,17 +20,27 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddChecklist" {
+      if segue.identifier == "AddChecklist" {
+        let navigationController = segue.destination as! UINavigationController
+        let controller = navigationController.topViewController as! AddOrEditChecklistViewController
+        controller.delegate = self
+      } else {
+        print("add editing functionality")
+        }
+    }
+      /*
+      } else if segue.identifier == "EditItem" {
           let navigationController = segue.destination as! UINavigationController
           let controller = navigationController.topViewController as! AddOrEditChecklistViewController
           controller.delegate = self
+          //get the current indexPath
+          if let indexPath = tableView.indexPath(for: sender as! UITableViewCell)
+          {
+            controller.checklistToEdit = lists[indexPath.row]
         }
+      }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   */
     
     //  MARK: - TableView Data Source Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,6 +74,11 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     
     
     //  MARK: - TableView Delegate Methods
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        lists.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
     
     //3 delegate methods that respond to messages sent from the AddOrEditChecklistVC
     //delegate method #1

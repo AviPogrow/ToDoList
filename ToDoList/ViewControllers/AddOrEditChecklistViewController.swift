@@ -25,7 +25,7 @@ class AddOrEditChecklistViewController: UITableViewController {
     
     weak var delegate: AddOrEditChecklistViewControllerDelegate?
     
-    var item: Checklist?
+    var checklistToEdit: Checklist?
     
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -38,14 +38,19 @@ class AddOrEditChecklistViewController: UITableViewController {
     }
     
         @IBAction func done() {
-        let checklist = Checklist(name: textField.text!)
+        //    if let checklist = checklistToEdit {
+        //    checklist.text = textField.text!
+         
         
+        // delegate!.addOrEditChecklistViewController(self, didFinishAdding: checklistToEdit)
+        //    } else {
+        let checklist = Checklist(name: textField.text!)
         delegate!.addOrEditChecklistViewController(self, didFinishAdding: checklist)
     }
-    
     @IBAction func cancelPressed(_ sender: Any) {
         print("cancel was pressed")
-        delegate!.addOrEditChecklistViewControllerDidCancel(self)
+        dismiss(animated: true, completion: nil)
+        //delegate!.addOrEditChecklistViewControllerDidCancel(self)
     }
     
     override func tableView(_ tableView: UITableView,

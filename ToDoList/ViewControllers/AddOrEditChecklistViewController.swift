@@ -9,12 +9,12 @@
 import UIKit
 
 protocol AddOrEditChecklistViewControllerDelegate: class {
-  func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController )
+  func addOrEditChecklistViewControllerDidCancel(_ controller: AddOrEditChecklistViewController )
   
-  func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController,
+  func addOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController,
                                 didFinishAdding checklist: Checklist)
   
-  func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController,
+  func addOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController,
                                 didFinishEditing checklist: Checklist)
 }
 
@@ -40,12 +40,12 @@ class AddOrEditChecklistViewController: UITableViewController {
         @IBAction func done() {
         let checklist = Checklist(name: textField.text!)
         
-        delegate!.AddOrEditChecklistViewController(self, didFinishAdding: checklist)
+        delegate!.addOrEditChecklistViewController(self, didFinishAdding: checklist)
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
         print("cancel was pressed")
-        delegate!.AddOrEditChecklistViewController(self)
+        delegate!.addOrEditChecklistViewControllerDidCancel(self)
     }
     
     override func tableView(_ tableView: UITableView,

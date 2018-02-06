@@ -67,12 +67,12 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     
     //3 delegate methods that respond to messages sent from the AddOrEditChecklistVC
     //delegate method #1
-    func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController) {
+    func addOrEditChecklistViewControllerDidCancel(_ controller: AddOrEditChecklistViewController) {
         dismiss(animated: true, completion: nil)
     }
     
     //delegate method #2
-    func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController, didFinishAdding checklist: Checklist) {
+    func addOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController, didFinishAdding checklist: Checklist) {
         
         //a. create an index:Int to point to the new row in the TableView
         let newRowIndex = lists.count
@@ -91,7 +91,7 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     }
     
     //delegate method #3
-    func AddOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController, didFinishEditing checklist: Checklist) {
+    func addOrEditChecklistViewController(_ controller: AddOrEditChecklistViewController, didFinishEditing checklist: Checklist) {
      //a. take the checklist object passed into the function and find its index in the array
      if let index = lists.index(of: checklist) {
       //b. create an indexPath to tell the tableView where to put the row

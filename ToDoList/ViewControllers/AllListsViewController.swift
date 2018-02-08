@@ -24,11 +24,7 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
         let navigationController = segue.destination as! UINavigationController
         let controller = navigationController.topViewController as! AddOrEditChecklistViewController
         controller.delegate = self
-      } else {
-        print("add editing functionality")
-        }
-    }
-      /*
+      
       } else if segue.identifier == "EditItem" {
           let navigationController = segue.destination as! UINavigationController
           let controller = navigationController.topViewController as! AddOrEditChecklistViewController
@@ -40,7 +36,7 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
         }
       }
     }
-   */
+   
     
     //  MARK: - TableView Data Source Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

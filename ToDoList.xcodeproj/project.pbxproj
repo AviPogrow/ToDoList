@@ -16,6 +16,7 @@
 		FA42AB542027758700B04F38 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42AB532027758700B04F38 /* ToDoListUITests.swift */; };
 		FA42AB6C20279B4800B04F38 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42AB6B20279B4800B04F38 /* Checklist.swift */; };
 		FA42AB6E20279BC900B04F38 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42AB6D20279BC900B04F38 /* ChecklistItem.swift */; };
+		FA9792CC202C73300069151C /* ChecklistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9792CB202C73300069151C /* ChecklistDetailViewController.swift */; };
 		FAEA0E452028713200AF6E76 /* AddOrEditChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		FA42AB6A202795B900B04F38 /* Drinks.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drinks.psd; sourceTree = "<group>"; };
 		FA42AB6B20279B4800B04F38 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		FA42AB6D20279BC900B04F38 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		FA9792CB202C73300069151C /* ChecklistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDetailViewController.swift; sourceTree = "<group>"; };
 		FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditChecklistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 			children = (
 				FA42AB352027758600B04F38 /* AllListsViewController.swift */,
 				FAEA0E442028713200AF6E76 /* AddOrEditChecklistViewController.swift */,
+				FA9792CB202C73300069151C /* ChecklistDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				FAEA0E452028713200AF6E76 /* AddOrEditChecklistViewController.swift in Sources */,
 				FA42AB362027758600B04F38 /* AllListsViewController.swift in Sources */,
+				FA9792CC202C73300069151C /* ChecklistDetailViewController.swift in Sources */,
 				FA42AB342027758600B04F38 /* AppDelegate.swift in Sources */,
 				FA42AB6C20279B4800B04F38 /* Checklist.swift in Sources */,
 				FA42AB6E20279BC900B04F38 /* ChecklistItem.swift in Sources */,

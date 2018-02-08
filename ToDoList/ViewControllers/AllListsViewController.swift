@@ -26,7 +26,7 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
         let controller = navigationController.topViewController as! AddOrEditChecklistViewController
         controller.delegate = self
       
-      } else if segue.identifier == "EditItem" {
+      } else if segue.identifier == "EditChecklist" {
           let navigationController = segue.destination as! UINavigationController
           let controller = navigationController.topViewController as! AddOrEditChecklistViewController
           controller.delegate = self
@@ -47,27 +47,30 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-      let cell = makeCell(for: tableView)
+      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
       let checklist = lists[indexPath.row]
-      cell.textLabel!.text = checklist.name
-      cell.accessoryType = .detailDisclosureButton
+      let textLabel1 = cell.viewWithTag(101) as! UILabel
+      textLabel1.text = checklist.name
+      
+     
+      configureCheckmark(for: cell, with: checklist)
     
       return cell
     }
     
-    //helper method that checks if there is a cell to reuse and if not
-    //creates a new one
-    func makeCell(for tableView: UITableView) -> UITableViewCell {
-     let cellIdentifier = "Cell"
-     if let cell =
-      tableView.dequeueReusableCell(withIdentifier: cellIdentifier) {
-      return cell
-    } else {
-      return UITableViewCell(style: .default,
-                             reuseIdentifier: cellIdentifier)
+ 
+    func configureCheckmark(for cell: UITableViewCell,
+                            with item: Checklist) {
+        let label = cell.viewWithTag(1001) as! UILabel
+        if item.checked {
+            label.text = "√"
+        } else {
+            label.text = ""
+        }
     }
-  }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let checklist = lists[indexPath.row]
         performSegue(withIdentifier: "ShowChecklist", sender: checklist)

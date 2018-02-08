@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--All Lists View Controller-->
+        <!--Checklists-->
         <scene sceneID="cpd-LD-dup">
             <objects>
                 <tableViewController id="R44-MF-8LC" customClass="AllListsViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="IL2-KR-vqQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" id="IL2-KR-vqQ">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IL2-KR-vqQ" id="P89-DU-sZc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-ER-ZKr">
+                                            <rect key="frame" x="46" y="4" width="215" height="35.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.21292545970000001" green="0.74077149860000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VJ-NV-q0A">
+                                            <rect key="frame" x="14" y="4" width="24" height="35.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="NTb-Wx-qF0" kind="presentation" identifier="EditChecklist" trigger="accessoryAction" id="aaK-MS-CsG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,20 +52,17 @@
                             <outlet property="delegate" destination="R44-MF-8LC" id="ei5-st-JgW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PIf-20-GdW">
+                    <navigationItem key="navigationItem" title="Checklists" id="PIf-20-GdW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YcN-cU-J78">
                             <connections>
                                 <segue destination="NTb-Wx-qF0" kind="presentation" identifier="AddChecklist" id="KJr-3A-xO1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="4ur-ij-qVO" kind="show" identifier="ShowChecklist" id="tMH-fa-pdK"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4b-Fa-TOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="121.88905547226388"/>
+            <point key="canvasLocation" x="53.600000000000001" y="142.57871064467767"/>
         </scene>
         <!--(Name Of Checklist)-->
         <scene sceneID="0Vn-xE-KBD">
@@ -97,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="1052" y="114.69265367316342"/>
         </scene>
-        <!--Add Or Edit Checklist View Controller-->
+        <!--Add/Edit Checklist-->
         <scene sceneID="3NP-BK-wvG">
             <objects>
                 <tableViewController id="Apz-UC-qWJ" customClass="AddOrEditChecklistViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +153,7 @@
                             <outlet property="delegate" destination="Apz-UC-qWJ" id="gze-Li-b3d"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tlM-3o-rlU">
+                    <navigationItem key="navigationItem" title="Add/Edit Checklist" id="tlM-3o-rlU">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="h71-Wz-DQU">
                             <connections>
                                 <action selector="cancelPressed:" destination="Apz-UC-qWJ" id="MWe-CY-Mpr"/>
@@ -155,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mEk-yh-OcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="786.65667166416802"/>
+            <point key="canvasLocation" x="866" y="856"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="cP6-Ef-Xbj">
@@ -214,7 +231,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkS-4l-91K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-318" y="122"/>
+            <point key="canvasLocation" x="-630" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvt-RI-9Xb">
@@ -250,7 +267,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibt-ce-u4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="787"/>
+            <point key="canvasLocation" x="54" y="856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aaK-MS-CsG"/>
+    </inferredMetricsTieBreakers>
 </document>

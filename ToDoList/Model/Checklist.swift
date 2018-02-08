@@ -30,8 +30,7 @@ class Checklist: NSObject, NSCoding {
       aCoder.encode(items, forKey: "Items")
     }
     
-   
-    
-   
-    
-}
+    func toggleCheckedState() {
+        checked = !checked
+    }
+ }

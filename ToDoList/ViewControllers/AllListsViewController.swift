@@ -72,8 +72,13 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let checklist = lists[indexPath.row]
-        performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+        if let cell = tableView.cellForRow(at: indexPath) {
+         let checklist = lists[indexPath.row]
+         checklist.toggleCheckedState()
+         configureCheckmark(for: cell, with: checklist)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     

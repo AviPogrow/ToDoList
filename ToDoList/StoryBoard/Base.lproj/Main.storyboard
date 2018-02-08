@@ -39,6 +39,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="4ur-ij-qVO" kind="show" identifier="ShowChecklist" id="tMH-fa-pdK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4b-Fa-TOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +71,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cE-Lb-zZm">
-                                            <rect key="frame" x="32" y="5" width="293" height="32"/>
+                                            <rect key="frame" x="32" y="5" width="275" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -211,7 +214,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkS-4l-91K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="122"/>
+            <point key="canvasLocation" x="-318" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvt-RI-9Xb">

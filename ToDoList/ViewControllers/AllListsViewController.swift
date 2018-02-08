@@ -19,6 +19,7 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "AddChecklist" {
         let navigationController = segue.destination as! UINavigationController
@@ -67,6 +68,10 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
                              reuseIdentifier: cellIdentifier)
     }
   }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let checklist = lists[indexPath.row]
+        performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+    }
     
     
     //  MARK: - TableView Delegate Methods

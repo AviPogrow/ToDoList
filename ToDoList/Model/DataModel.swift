@@ -9,4 +9,5 @@
 import Foundation
 class DataModel {
     //wrapper class to hold all model objects
+    var checklists = [Checklist]()
 }

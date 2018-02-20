@@ -8,3 +8,16 @@
 
 import UIKit
 
+class ChecklistDetailViewController: UITableViewController{
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+      
+    }
+
+
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}

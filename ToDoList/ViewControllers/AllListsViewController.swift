@@ -8,15 +8,29 @@
 
 import UIKit
 
-class AllListsViewController: UITableViewController, AddOrEditChecklistViewControllerDelegate {
+class AllListsViewController: UITableViewController,
+    AddOrEditChecklistViewControllerDelegate, UINavigationControllerDelegate {
     
     var dataModel: DataModel!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    //invoked by UIKit after the VC has become visible
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //VC makes itself the delegate of navController
+        navigationController?.delegate = self
+        
+        //checks to see if vc needs to perform the segue
+        let index = dataModel.indexOfSelectedChecklist
+        if index >= 0 && index < dataModel.checklists.count  {
+            let checklist = dataModel.checklists[index]
+            performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+        }
     }
     
     
@@ -72,14 +86,13 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-         let checklist = dataModel.checklists[indexPath.row]
-         checklist.toggleCheckedState()
-         configureCheckmark(for: cell, with: checklist)
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
+      
+      //user defaults stores the index of the selected row under the key "checklistindex"
+      dataModel.indexOfSelectedChecklist = indexPath.row
+      
+      let checklist = dataModel.checklists[indexPath.row]
+      performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+      }
     
     
     //  MARK: - TableView Delegate Methods
@@ -130,6 +143,16 @@ class AllListsViewController: UITableViewController, AddOrEditChecklistViewContr
      dismiss(animated: true, completion: nil)
     }
     
+    
+    //MARK - UINavigationController Delegate Method
+    //This method is invoked whenever the navController slides to a new screen
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        //was the back button tapped?
+        if viewController === self {
+            dataModel.indexOfSelectedChecklist = -1
+        }
+    }
 
 
 }

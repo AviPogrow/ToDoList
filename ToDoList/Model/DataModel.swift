@@ -20,6 +20,26 @@ class DataModel {
     //load checklist.plist
     init() {
         loadChecklists()
+        registerDefaults()
+    }
+    
+    func registerDefaults() {
+        
+        //create a new dictionary instance and adds the value -1 for the key "Checklistindex"
+        let dictionary: [String: Any] = ["ChecklistIndex": -1 ]
+        
+        //store the dictionary in the UserDefaults object
+        UserDefaults.standard.register(defaults: dictionary)
+    }
+    
+    var indexOfSelectedChecklist: Int {
+        get {
+          return UserDefaults.standard.integer(forKey: "ChecklistIndex")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "ChecklistIndex")
+            
+        }
     }
     
     

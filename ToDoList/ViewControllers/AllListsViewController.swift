@@ -29,7 +29,7 @@ class AllListsViewController: UITableViewController,
         let index = dataModel.indexOfSelectedChecklist
         if index >= 0 && index < dataModel.checklists.count  {
             let checklist = dataModel.checklists[index]
-            performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+            //performSegue(withIdentifier: "ShowChecklist", sender: checklist)
         }
     }
     

@@ -82,7 +82,8 @@ class AllListsViewController: UITableViewController,
      }
   }
     
-    
+    //  MARK: - TableView Delegate Methods
+    //handle master to detail segue
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
       //user defaults stores the index of the selected row under the key "checklistindex"
@@ -93,15 +94,37 @@ class AllListsViewController: UITableViewController,
       
       //pass the current checklist in the segue
       performSegue(withIdentifier: "ShowChecklist", sender: checklist)
-      }
+      
+    }
     
-    
-    //  MARK: - TableView Delegate Methods
+    //handle deletion
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         dataModel.checklists.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
+    
+    //handle accessoryButton tap to allow user to edit or add
+    override func tableView(_ tableView: UITableView,
+                          accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    
+        let navigationController = storyboard!.instantiateViewController(
+            withIdentifier: "ListDetailNavigationController")
+            as! UINavigationController
+    
+        let controller = navigationController.topViewController
+            as! AddOrEditChecklistViewController
+            controller.delegate = self
+    
+            let checklist = dataModel.checklists[indexPath.row]
+            controller.checklistToEdit = checklist
+    
+            present(navigationController, animated: true, completion: nil)
+        }
+    
+    
+    
+    
     
     //3 delegate methods that respond to messages sent from the AddOrEditChecklistVC
     //delegate method #1

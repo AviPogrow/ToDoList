@@ -33,24 +33,19 @@ class AllListsViewController: UITableViewController,
         }
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "AddChecklist" {
-        let navigationController = segue.destination as! UINavigationController
-        let controller = navigationController.topViewController as! AddOrEditChecklistViewController
-        controller.delegate = self
-      
-      } else if segue.identifier == "EditChecklist" {
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowChecklist" {
+        let controller = segue.destination as! ChecklistDetailViewController
+        controller.checklist = sender as! Checklist
+
+        } else if segue.identifier == "AddChecklist" {
           let navigationController = segue.destination as! UINavigationController
-          let controller = navigationController.topViewController as! AddOrEditChecklistViewController
-          controller.delegate = self
-          //get the current indexPath
-          if let indexPath = tableView.indexPath(for: sender as! UITableViewCell)
-          {
-            controller.checklistToEdit = dataModel.checklists[indexPath.row]
-        }
-      }
+         let controller = navigationController.topViewController as! AddOrEditChecklistViewController
+         controller.delegate = self
+         controller.checklistToEdit = nil
     }
+  }
+
    
     
     //  MARK: - TableView Data Source Methods
@@ -61,28 +56,31 @@ class AllListsViewController: UITableViewController,
     override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+      let cell = makeCell(for: tableView)
 
       let checklist = dataModel.checklists[indexPath.row]
-      let textLabel1 = cell.viewWithTag(101) as! UILabel
-      textLabel1.text = checklist.name
+      cell.textLabel?.text = checklist.name
+      cell.accessoryType = .detailDisclosureButton
       
+      //TODO - fill in detail textLabel with items remaining
+      //TODO = Fill in imageView with icon for tasks
      
-      configureCheckmark(for: cell, with: checklist)
+      
     
       return cell
     }
     
  
-    func configureCheckmark(for cell: UITableViewCell,
-                            with item: Checklist) {
-        let label = cell.viewWithTag(1001) as! UILabel
-        if item.checked {
-            label.text = "√"
-        } else {
-            label.text = ""
-        }
-    }
+    func makeCell(for tableView: UITableView) -> UITableViewCell {
+     let cellIdentifier = "Cell"
+      if let cell =
+      tableView.dequeueReusableCell(withIdentifier: cellIdentifier) {
+      return cell
+     } else {
+      return UITableViewCell(style: .subtitle,
+                             reuseIdentifier: cellIdentifier)
+     }
+  }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -90,7 +88,10 @@ class AllListsViewController: UITableViewController,
       //user defaults stores the index of the selected row under the key "checklistindex"
       dataModel.indexOfSelectedChecklist = indexPath.row
       
+      //get a reference to current checklist using indexPath.row
       let checklist = dataModel.checklists[indexPath.row]
+      
+      //pass the current checklist in the segue
       performSegue(withIdentifier: "ShowChecklist", sender: checklist)
       }
     

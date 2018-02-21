@@ -10,10 +10,17 @@ import UIKit
 
 class ChecklistDetailViewController: UITableViewController{
     
-    override func viewDidAppear(_ animated: Bool) {
+    var checklist: Checklist!
+    
+      override func viewDidLoad() {
+        super.viewDidLoad()
+        title = checklist.name
+      }
+    
+      override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
       
-    }
+     }
 
 
     @IBAction func cancel(_ sender: Any) {

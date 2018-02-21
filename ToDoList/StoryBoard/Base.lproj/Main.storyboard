@@ -108,7 +108,7 @@
                                 <action selector="cancel" destination="gM6-T0-e6d" id="6L9-q3-xtw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="tTA-GQ-gMl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tTA-GQ-gMl">
                             <connections>
                                 <action selector="done" destination="gM6-T0-e6d" id="jAs-xL-t8E"/>
                             </connections>
@@ -197,7 +197,7 @@
                                 <action selector="cancelPressed:" destination="Apz-UC-qWJ" id="MWe-CY-Mpr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0WY-xi-zGK">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="0WY-xi-zGK">
                             <connections>
                                 <action selector="done" destination="Apz-UC-qWJ" id="o0D-w7-hZv"/>
                             </connections>

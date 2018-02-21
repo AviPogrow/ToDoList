@@ -30,6 +30,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     
       override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
         
         if let item = itemToEdit {
         title = "Edit Item"

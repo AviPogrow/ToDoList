@@ -18,14 +18,18 @@ protocol AddOrEditChecklistViewControllerDelegate: class {
                                 didFinishEditing checklist: Checklist)
 }
 
-class AddOrEditChecklistViewController: UITableViewController, UITextFieldDelegate {
+class AddOrEditChecklistViewController: UITableViewController, UITextFieldDelegate,
+                IconPickerViewControllerDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+    @IBOutlet weak var iconImageView: UIImageView!
+    
     weak var delegate: AddOrEditChecklistViewControllerDelegate?
     
     var checklistToEdit: Checklist?
+    var iconName = "Folder"
     
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -33,8 +37,8 @@ class AddOrEditChecklistViewController: UITableViewController, UITextFieldDelega
       if let checklist = checklistToEdit {
         title = "Edit Checklist"
         textField.text = checklist.name
-        
-        doneBarButton.isEnabled = false
+        doneBarButton.isEnabled = true
+        iconName = checklist.iconName
         }
     }
     
@@ -53,7 +57,7 @@ class AddOrEditChecklistViewController: UITableViewController, UITextFieldDelega
             delegate!.addOrEditChecklistViewController(self, didFinishAdding: checklistToEdit!)
         
         } else {
-          let checklist = Checklist(name: textField.text!)
+        let checklist = Checklist(name: textField.text!, iconName: iconName)
           delegate!.addOrEditChecklistViewController(self, didFinishAdding: checklist)
         }
      }
@@ -74,4 +78,12 @@ class AddOrEditChecklistViewController: UITableViewController, UITextFieldDelega
       doneBarButton.isEnabled = (newText.length > 0)
       return true
   }
+    
+    func iconPicker(_ picker: IconPickerViewController,
+                  didPick iconName: String) {
+        
+            self.iconName = iconName
+            iconImageView.image = UIImage(named: iconName)
+            let _ = navigationController?.popViewController(animated: true)
+        }
 }

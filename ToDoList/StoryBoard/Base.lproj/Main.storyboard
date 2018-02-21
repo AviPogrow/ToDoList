@@ -197,7 +197,7 @@
                                 <action selector="cancelPressed:" destination="Apz-UC-qWJ" id="MWe-CY-Mpr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="0WY-xi-zGK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0WY-xi-zGK">
                             <connections>
                                 <action selector="done" destination="Apz-UC-qWJ" id="o0D-w7-hZv"/>
                             </connections>
@@ -215,7 +215,7 @@
         <!--Navigation Controller-->
         <scene sceneID="k0q-s8-tof">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NTb-Wx-qF0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddOrEditChecklistNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="NTb-Wx-qF0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bqq-yH-hv4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

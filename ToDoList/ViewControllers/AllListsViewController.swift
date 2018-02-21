@@ -109,7 +109,7 @@ class AllListsViewController: UITableViewController,
                           accessoryButtonTappedForRowWith indexPath: IndexPath) {
     
         let navigationController = storyboard!.instantiateViewController(
-            withIdentifier: "ListDetailNavigationController")
+            withIdentifier: "AddOrEditChecklistNavigationController")
             as! UINavigationController
     
         let controller = navigationController.topViewController
